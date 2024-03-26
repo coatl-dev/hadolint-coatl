@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - coatl
+
+jobs:
+  tox:
+    name: tox-${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-13, ubuntu-22.04, windows-2022]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        id: setup-python
+        with:
+          python-version: '3.12'
+
+      - name: Cache Python
+        id: cache-python
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.setup-python.outputs.python-path }}
+          key: py-${{ steps.setup-python.outputs.python-version }}-${{ runner.os }}
+
+      - name: Upgrade pre-installed dependencies
+        run: |
+          python -m pip install --upgrade \
+            pip \
+            setuptools \
+            wheel
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade tox
+
+      - name: Cache tox
+        id: cache-tox
+        uses: actions/cache@v4
+        with:
+          path: .tox
+          key: tox-${{ steps.setup-python.outputs.python-version }}-${{ runner.os }}-${{ hashFiles('tox.ini') }}
+
+      - name: Run tox
+        run: |
+          tox

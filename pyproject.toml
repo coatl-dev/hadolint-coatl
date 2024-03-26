@@ -1,0 +1,24 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=46.1",
+]
+
+[tool.cibuildwheel]
+before-all = "uname -a"
+build-frontend = "build"
+skip = [
+  "*-manylinux_i686",
+  "*musllinux*",
+  "*-win32",
+  "pp*",
+]
+
+[tool.cibuildwheel.linux]
+archs = ["x86_64"]
+
+[tool.cibuildwheel.macos]
+archs = ["x86_64"]
+
+[tool.cibuildwheel.windows]
+archs = ["x86_64"]
