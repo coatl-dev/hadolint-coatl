@@ -1,6 +1,7 @@
 - id: hadolint
   name: Lint Dockerfiles
   description: Runs hadolint to lint Dockerfiles
-  language: system
-  types: ["dockerfile"]
   entry: hadolint
+  language: python
+  types: ["dockerfile"]
+  require_serial: true
