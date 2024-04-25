@@ -15,7 +15,7 @@ skip = [
 ]
 
 [tool.cibuildwheel.linux]
-archs = ["x86_64"]
+archs = ["auto", "aarch64"]
 
 [tool.cibuildwheel.macos]
 archs = ["x86_64"]
