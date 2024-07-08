@@ -22,7 +22,7 @@ jobs:
         with:
           platforms: all
 
-      - uses: pypa/cibuildwheel@v2.19.1
+      - uses: pypa/cibuildwheel@v2.19.2
         env:
           CIBW_ARCHS_LINUX: auto aarch64
 
