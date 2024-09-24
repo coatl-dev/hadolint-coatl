@@ -9,13 +9,13 @@ A python wrapper to provide a pip-installable [hadolint] binary. Inspired by
 Internally this package provides a convenient way to download the pre-built
 hadolint binary for your particular platform.
 
-### installation
+## Installation
 
 ```bash
 pip install hadolint-coatl
 ```
 
-### usage
+## Usage
 
 After installation, the `hadolint` binary should be available in your
 environment (or `hadolint.exe` on windows).
