@@ -1,6 +1,6 @@
 # hadolint-coatl
 
-[![PyPI - Version](https://img.shields.io/pypi/v/hadolint-coatl)](https://pypi.org/project/hadolint-coatl)
+[![GitHub Release](https://img.shields.io/github/v/release/coatl-dev/hadolint-coatl)](https://github.com/coatl-dev/hadolint-coatl/releases/latest)
 [![Downloads](https://static.pepy.tech/badge/hadolint-coatl)](https://pepy.tech/project/hadolint-coatl)
 
 A python wrapper to provide a pip-installable [hadolint] binary. Inspired by
