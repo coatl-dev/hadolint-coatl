@@ -28,7 +28,7 @@ Sample `.pre-commit-config.yaml`:
 
 ```yaml
   - repo: https://github.com/coatl-dev/hadolint-coatl
-    rev: 2.12.1b0
+    rev: 2.13.1
     hooks:
       - id: hadolint
 ```
