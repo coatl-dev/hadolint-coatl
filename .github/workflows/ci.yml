@@ -28,7 +28,7 @@ jobs:
           python -m pip install tox
 
       - name: Cache tox
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .tox
           key: tox-${{ steps.setup-python.outputs.python-version }}-${{ runner.os }}-${{ hashFiles('tox.ini') }}
