@@ -7,7 +7,7 @@ on:
       - coatl
 
 jobs:
-  tox:
+  tests:
     name: tox-${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -33,6 +33,14 @@ jobs:
           path: .tox
           key: tox-${{ steps.setup-python.outputs.python-version }}-${{ runner.os }}-${{ hashFiles('tox.ini') }}
 
-      - name: Run tests
+      - name: Run tox
         run: |
           tox
+
+      - name: Set up QEMU
+        if: runner.os == 'Linux'
+        uses: docker/setup-qemu-action@v4
+        with:
+          platforms: arm64
+
+      - uses: pypa/cibuildwheel@v4.1.1
