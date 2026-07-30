@@ -20,7 +20,7 @@ archs = ["auto", "aarch64"]
 
 [tool.cibuildwheel.macos]
 archs = ["arm64"]
-environment = {MACOSX_DEPLOYMENT_TARGET="14.0"}
+environment = {MACOSX_DEPLOYMENT_TARGET="26.0"}
 
 [tool.cibuildwheel.windows]
 archs = ["AMD64"]
