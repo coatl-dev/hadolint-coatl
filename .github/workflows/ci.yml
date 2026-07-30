@@ -8,7 +8,7 @@ on:
 
 jobs:
   tests:
-    name: tox-${{ matrix.os }}
+    name: test-${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
