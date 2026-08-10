@@ -45,4 +45,4 @@ jobs:
 
       - name: Build wheels
         if: github.event_name == 'pull_request'
-        uses: pypa/cibuildwheel@v4.1.1
+        uses: pypa/cibuildwheel@v4.2.0
